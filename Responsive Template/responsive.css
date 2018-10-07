@@ -1,0 +1,385 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #262626;
+    overflow: hidden;
+}
+
+.lds-roller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #262626;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 32px 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -3px 0 0 -3px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 50px;
+    left: 50px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 54px;
+    left: 45px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 57px;
+    left: 39px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 58px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 57px;
+    left: 25px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 54px;
+    left: 19px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 50px;
+    left: 14px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 45px;
+    left: 10px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+section.sec1 {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.sec1:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform-origin: right;
+    transform: skewY(8deg);
+    animation: yourAnimation 2s 1 linear;
+}
+
+section.sec1:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform-origin: left;
+    transform: skewY(-8deg);
+    animation: yourAnimation 2s 1 linear;
+}
+
+@keyframes yourAnimation {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 8%;
+}
+
+ul li {
+    float: left;
+    width: 200px;
+    height: 40px;
+    opacity: .9;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 30px
+}
+
+ul li a:hover {
+    text-shadow: 2px 5px 50px #ffff;
+    margin-top: 0
+}
+
+@media (max-width:575px) {
+    .lds-roller div {
+        left: 45%
+    }
+    ul {
+        left: 22%;
+    }
+}
+
+section.sec3 {
+    position: relative;
+    overflow: hidden;
+    background: url(city.png.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+section.sec3:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform-origin: left;
+    transform: skewY(5deg)
+}
+
+section.sec2 {
+    height: auto;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+section.sec2 h1 {
+    margin: 50px 0 20px;
+    padding: 0;
+    font-family: sans-serif;
+    color: #262626;
+    font-size: 48px;
+    text-transform: capitalize;
+}
+
+section.sec2 p {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #262626;
+    font-size: 20px
+}
+
+.sec4 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 60% / auto auto auto;
+    grid-gap: 50px 20px;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: sans-serif;
+    margin: auto;
+    text-transform: capitalize;
+    background: #eee
+}
+@media (max-width:575px) {
+    .sec4 {
+        display: block;
+    }
+}
+.sec4 .item1,
+.sec4 .item2,
+.sec4 .item3,
+.sec4 .item4,
+.sec4 .item5,
+.sec4 .item6 {
+    background-color: #29465a;
+    color: white;
+    padding-top: 30px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    top: 0;
+    transition: top ease 0.3s;
+}
+.sec4 .item1 p,
+.sec4 .item2 p,
+.sec4 .item3 p,
+.sec4 .item4 p,
+.sec4 .item5 p,
+.sec4 .item6 p {
+    line-height: 27px
+}
+
+@media (max-width:575px) {
+    .sec4 .item1,
+    .sec4 .item2,
+    .sec4 .item3,
+    .sec4 .item4,
+    .sec4 .item5,
+    .sec4 .item6 {
+        height: auto;
+    }
+}
+
+.sec4 .item1:hover,
+.sec4 .item2:hover,
+.sec4 .item3:hover,
+.sec4 .item4:hover,
+.sec4 .item5:hover,
+.sec4 .item6:hover {
+    box-shadow: 0px 26px 70px -18px #000;
+    top: -7px;
+}
+
+i {
+    margin-bottom: 30px
+}
+
+#contact {
+    height: auto;
+}
+
+#contact .container {
+    width: 80%;
+    margin: auto
+}
+
+#contact input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    box-sizing: border-box;
+    background-color: rgba(204, 204, 204, .5)
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Style the container/contact section */
+
+#contact .container {
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center
+}
+
+.contact {
+    font-size: 30px
+}
+
+.socials a {
+    color: white;
+    text-decoration: none;
+    padding: 10px
+}
+
+.Mylink {
+    font-size: 25px
+}
+
+.myname {
+    color: grey;
+    text-decoration: none;
+}
+
+.myname:hover {
+    color: black
+}
